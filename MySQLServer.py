@@ -28,7 +28,7 @@ def create_database():
         # This prevents the script from failing if the database already exists
         query = "CREATE DATABASE IF NOT EXISTS {} DEFAULT CHARACTER SET 'utf8'".format(DATABASE_NAME)
         
-        cursor.execute(query)
+        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         
         # 3. Print success message
         print(f"Database '{DATABASE_NAME}' created successfully!")
