@@ -1,22 +1,12 @@
--- alx_book_store.sql
--- Task 0: A Magical Database for Your Dream Online Bookstore Adventure!
+CREATE DATABASE IF NOT EXISTS alx_book_store;
 
--- Drop the database if it already exists to ensure a clean start
-DROP DATABASE IF EXISTS alx_book_store;
-
--- Create the database
-CREATE DATABASE alx_book_store;
-
--- Use the database
 USE alx_book_store;
 
--- Create Authors table
 CREATE TABLE Authors (
     author_id INT PRIMARY KEY,
     author_name VARCHAR(215)
 );
 
--- Create Books table
 CREATE TABLE Books (
     book_id INT PRIMARY KEY,
     title VARCHAR(130),
@@ -26,7 +16,6 @@ CREATE TABLE Books (
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
--- Create Customers table
 CREATE TABLE Customers (
     customer_id INT PRIMARY KEY,
     customer_name VARCHAR(215),
@@ -34,7 +23,6 @@ CREATE TABLE Customers (
     address TEXT
 );
 
--- Create Orders table
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
     customer_id INT,
@@ -42,7 +30,6 @@ CREATE TABLE Orders (
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
--- Create Order_Details table
 CREATE TABLE Order_Details (
     orderdetailid INT PRIMARY KEY,
     order_id INT,
