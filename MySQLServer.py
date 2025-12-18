@@ -25,9 +25,6 @@ def create_database():
         cursor = cnx.cursor()
 
         # 2. Execute the CREATE DATABASE statement with IF NOT EXISTS
-        # This prevents the script from failing if the database already exists
-        query = "CREATE DATABASE IF NOT EXISTS {} DEFAULT CHARACTER SET 'utf8'".format(DATABASE_NAME)
-        
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         
         # 3. Print success message
